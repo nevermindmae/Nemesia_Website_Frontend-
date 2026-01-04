@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F7F4EF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+
+<!-- Smooth scrolling -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+<!-- Animation -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<title>Nemesia · Catalogue</title>
+
+</head>
+<body data-page="catalogue">
+
+<nav class="navbar navbar-expand-lg fixed-top py-3">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <span class="brand-dot"></span>
+      <span style="font-weight:800; letter-spacing:-0.02em">Nemesia</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="catalogue.html">Catalogue</a></li>
+        <li class="nav-item"><a class="nav-link" href="visualise.html">Visualise</a></li>
+        <li class="nav-item"><a class="nav-link" href="forum.html">Forum</a></li>
+        <li class="nav-item ms-lg-2"><a class="btn btn-primary btn-sm" href="visualise.html">Open Planner</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<main class="container container-hero">
+  <section class="section pt-4">
+    <div class="row align-items-end g-3">
+      <div class="col-lg-7">
+        <div class="badge-soft mb-2">Catalogue</div>
+        <h1 style="letter-spacing:-0.03em; font-weight:800" class="mb-2">Procedure summaries, misconceptions, aftercare.</h1>
+        <p class="text-muted mb-0">Dummy data demo. Use filters and open a procedure to view details or add it to your plan.</p>
+      </div>
+      <div class="col-lg-5">
+        <div class="card-glass p-3 d-flex flex-column gap-2">
+          <div class="row g-2">
+            <div class="col-md-5">
+              <label class="small text-muted mb-1">Category</label>
+              <select id="filterCategory" class="form-select"></select>
+            </div>
+            <div class="col-md-7">
+              <label class="small text-muted mb-1">Search</label>
+              <input id="searchInput" class="form-control" placeholder="e.g. pigment, filler, microneedling">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="catalogueSkeleton" class="row g-3 mt-3">
+      <div class="col-md-6 col-lg-4"><div class="card-glass p-3 h-100"><div class="skeleton" style="height:14px;width:70%"></div><div class="skeleton mt-2" style="height:28px;width:90%"></div><div class="skeleton mt-3" style="height:12px;width:80%"></div><div class="skeleton mt-4" style="height:40px;width:100%"></div></div></div><div class="col-md-6 col-lg-4"><div class="card-glass p-3 h-100"><div class="skeleton" style="height:14px;width:70%"></div><div class="skeleton mt-2" style="height:28px;width:90%"></div><div class="skeleton mt-3" style="height:12px;width:80%"></div><div class="skeleton mt-4" style="height:40px;width:100%"></div></div></div><div class="col-md-6 col-lg-4"><div class="card-glass p-3 h-100"><div class="skeleton" style="height:14px;width:70%"></div><div class="skeleton mt-2" style="height:28px;width:90%"></div><div class="skeleton mt-3" style="height:12px;width:80%"></div><div class="skeleton mt-4" style="height:40px;width:100%"></div></div></div><div class="col-md-6 col-lg-4"><div class="card-glass p-3 h-100"><div class="skeleton" style="height:14px;width:70%"></div><div class="skeleton mt-2" style="height:28px;width:90%"></div><div class="skeleton mt-3" style="height:12px;width:80%"></div><div class="skeleton mt-4" style="height:40px;width:100%"></div></div></div><div class="col-md-6 col-lg-4"><div class="card-glass p-3 h-100"><div class="skeleton" style="height:14px;width:70%"></div><div class="skeleton mt-2" style="height:28px;width:90%"></div><div class="skeleton mt-3" style="height:12px;width:80%"></div><div class="skeleton mt-4" style="height:40px;width:100%"></div></div></div><div class="col-md-6 col-lg-4"><div class="card-glass p-3 h-100"><div class="skeleton" style="height:14px;width:70%"></div><div class="skeleton mt-2" style="height:28px;width:90%"></div><div class="skeleton mt-3" style="height:12px;width:80%"></div><div class="skeleton mt-4" style="height:40px;width:100%"></div></div></div>
+    </div>
+
+    <div id="catalogueEmpty" class="card-glass p-4 mt-3 d-none">
+      <div style="font-weight:800">No results</div>
+      <div class="text-muted">Try changing category or search terms.</div>
+    </div>
+
+    <div id="catalogueGrid" class="row g-3 mt-3"></div>
+  </section>
+</main>
+
+<!-- Procedure modal -->
+<div class="modal fade" id="procModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-4 p-lg-5">
+        <div class="d-flex justify-content-between align-items-start gap-3">
+          <div>
+            <h2 id="procTitle" style="letter-spacing:-0.03em;font-weight:900" class="mb-1">Loading…</h2>
+            <div id="procMeta" class="text-muted small"> </div>
+          </div>
+          <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Close</button>
+        </div>
+
+        <hr class="my-3" style="opacity:.08">
+
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <div class="badge-soft mb-2">Overview</div>
+            <p id="procOverview" class="mb-3" style="color:rgba(46,46,46,.82)"></p>
+
+            <div class="badge-soft mb-2">Common misconceptions</div>
+            <ul id="procMisconceptions" class="mb-3" style="color:rgba(46,46,46,.82)"></ul>
+
+            <div class="badge-soft mb-2">Aftercare essentials</div>
+            <ul id="procAftercare" class="mb-0" style="color:rgba(46,46,46,.82)"></ul>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="card-glass p-3">
+              <div class="d-flex justify-content-between align-items-end">
+                <div>
+                  <div class="small text-muted">Typical price</div>
+                  <div id="procPrice" style="font-weight:900; font-size:1.1rem">—</div>
+                </div>
+                <div class="pill small">Demo</div>
+              </div>
+              <hr class="my-3" style="opacity:.08">
+              <button id="addToPlanBtn" class="btn btn-primary w-100">Add to Visualise</button>
+              <div class="small text-muted mt-2">This will open the planner and pre-select the procedure.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row g-3 align-items-center">
+      <div class="col-md">
+        <div style="font-weight:800; letter-spacing:-0.02em">Nemesia</div>
+        <div class="small">Restoring equilibrium. Fighting imbalance.</div>
+      </div>
+      <div class="col-md text-md-end">
+        <div class="small">
+          <span class="pill me-2">Cream #F7F4EF</span>
+          <span class="pill me-2">Lilac #C8BFD6</span>
+          <span class="pill">Grey #D6D6D6</span>
+        </div>
+      </div>
+    </div>
+    <hr class="my-3" style="opacity:.08">
+    <div class="small">
+      <strong>Disclaimer:</strong> Nemesia is a guide and informational tool only, not medical advice. Always consult a qualified clinician for personalised guidance.
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/mockBackend.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
