@@ -1,0 +1,315 @@
+/* Nemesia prototype — front-end only */
+
+:root {
+  --bg: #f6f4ef;
+  --ink: #6f6a65;
+  --ink-strong: #4f4b47;
+  --rule: rgba(79, 75, 71, 0.35);
+}
+
+@font-face {
+  font-family: "MagnoliaMedium";
+  src: url("../Web-Fonts/magnoliamedium-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AvenirNextUltraLight";
+  src: url("../Fonts/avenir-next-ultra-light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "AvenirNextUltraLight", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.2px;
+}
+
+/* Fixed header (matches the mock-up) */
+.site-header {
+  background: var(--bg);
+  z-index: 1030; /* above Bootstrap content */
+  padding-top: 20px;
+}
+
+.site-brand {
+  font-family: "MagnoliaMedium", Georgia, serif;
+  color: var(--ink-strong);
+  font-size: clamp(2rem, 3.2vw, 3.1rem);
+  text-align: center;
+  line-height: 1.05;
+  text-decoration: none;
+}
+
+.brand-rule {
+  border: none;
+  height: 1px;
+  background: var(--rule);
+  width: min(88vw, 1200px);
+  margin: 14px auto 0 auto;
+}
+
+.site-nav {
+  width: min(88vw, 1200px);
+  margin: 10px auto 0 auto;
+  padding-bottom: 10px;
+}
+
+.site-nav .nav-link {
+  font-family: "MagnoliaMedium", Georgia, serif;
+  color: var(--ink-strong);
+  opacity: 0.85;
+  font-size: 1.25rem;
+  padding: 12px 18px;
+  text-decoration: none;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.site-nav .nav-link.active {
+  opacity: 1;
+}
+
+/* Account for fixed header */
+.page-wrap {
+  padding-top: 170px;
+}
+
+/* Sections */
+.section {
+  position: relative;
+  min-height: calc(100vh - 170px);
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.section h2,
+.section h3 {
+  font-family: "MagnoliaMedium", Georgia, serif;
+  color: var(--ink-strong);
+  letter-spacing: 0.2px;
+}
+
+.section h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.35rem);
+  margin-bottom: 18px;
+}
+
+.section p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  opacity: 0.95;
+}
+
+.section .muted-link {
+  font-family: "AvenirNextUltraLight", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink-strong);
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.section .muted-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Hero / statue composition */
+.composition {
+  position: relative;
+  min-height: 540px;
+}
+
+.composition .statue {
+  position: absolute;
+  right: 8%;
+  top: 10%;
+  width: min(420px, 42vw);
+  height: auto;
+  filter: drop-shadow(0 14px 22px rgba(0,0,0,0.08));
+}
+
+.composition .flowers {
+  position: absolute;
+  right: 0;
+  bottom: -8%;
+  width: min(520px, 54vw);
+  height: auto;
+  pointer-events: none;
+}
+
+.composition .flowers.left {
+  left: 0;
+  right: auto;
+  transform: scaleX(-1);
+}
+
+.composition .petals-top {
+  position: absolute;
+  top: 8%;
+  right: 10%;
+  width: min(180px, 22vw);
+  height: auto;
+  opacity: 0.85;
+  transform: rotate(6deg);
+}
+
+/* Models */
+.models {
+  position: relative;
+  min-height: 580px;
+}
+
+.models img {
+  height: auto;
+  max-height: 640px;
+  width: auto;
+}
+
+.models .model-side {
+  position: absolute;
+  right: 38%;
+  top: 0;
+  width: min(320px, 32vw);
+  filter: drop-shadow(0 18px 26px rgba(0,0,0,0.10));
+}
+
+.models .model-front {
+  position: absolute;
+  right: 6%;
+  bottom: 0;
+  width: min(280px, 28vw);
+  filter: drop-shadow(0 18px 26px rgba(0,0,0,0.08));
+}
+
+/* Dysphoria section */
+.dysphoria {
+  overflow: hidden;
+}
+
+.dysphoria .model-large {
+  position: absolute;
+  left: -2%;
+  bottom: -6%;
+  width: min(620px, 62vw);
+  height: auto;
+  opacity: 0.92;
+  filter: drop-shadow(0 24px 34px rgba(0,0,0,0.08));
+}
+
+.dysphoria .overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: min(820px, 92vw);
+  margin: 0 auto;
+}
+
+.dysphoria .overlay h2 {
+  margin-bottom: 12px;
+}
+
+.dysphoria .overlay p {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  margin-bottom: 32px;
+}
+
+.cta .sub {
+  font-family: "MagnoliaMedium", Georgia, serif;
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  color: var(--ink-strong);
+  opacity: 0.9;
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  .composition .statue {
+    right: 2%;
+    top: 0;
+    width: min(360px, 55vw);
+  }
+  .models .model-side {
+    right: 46%;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-wrap {
+    padding-top: 200px;
+  }
+  .section {
+    min-height: auto;
+    padding: 40px 0;
+  }
+  .composition {
+    min-height: 420px;
+  }
+  .composition .statue {
+    position: relative;
+    right: auto;
+    top: auto;
+    display: block;
+    margin: 26px auto 0 auto;
+    width: min(320px, 80vw);
+  }
+  .composition .flowers {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    display: block;
+    margin: -40px auto 0 auto;
+    width: min(520px, 92vw);
+  }
+  .models {
+    min-height: 520px;
+  }
+  .models .model-side,
+  .models .model-front {
+    position: relative;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    display: inline-block;
+    width: min(280px, 80vw);
+    margin: 10px auto;
+  }
+  .models {
+    text-align: center;
+  }
+  .dysphoria .model-large {
+    left: -20%;
+    width: min(680px, 120vw);
+    opacity: 0.80;
+  }
+  .site-nav .nav-link {
+    padding: 10px 10px;
+    font-size: 1.05rem;
+  }
+}

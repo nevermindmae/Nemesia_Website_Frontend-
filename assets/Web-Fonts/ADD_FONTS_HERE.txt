@@ -1,0 +1,4 @@
+Add your font files here:
+
+- ./assets/Web-Fonts/magnoliamedium-webfont.woff
+- ./assets/Fonts/avenir-next-ultra-light.ttf

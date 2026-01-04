@@ -1,0 +1,39 @@
+      @font-face {
+        font-family: "MagnoliaMedium";
+        src: url("./assets/Web-Fonts/magnoliamedium-webfont.woff") format("woff");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "AvenirNextUltraLight";
+        src: url("./assets/Fonts/avenir-next-ultra-light.ttf") format("truetype");
+        font-weight: 200;
+        font-style: normal;
+        font-display: swap;
+        
+      }
+
+      .avenir-ultra-light {
+        font-family: "AvenirNextUltraLight", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      /* Only elements with this tag/class will use Magnolia */
+      magnolia,
+      .magnolia {
+        font-family: "MagnoliaMedium", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 2rem;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      .headline {
+        font-size: 3rem;
+        line-height: 1.1;
+      }

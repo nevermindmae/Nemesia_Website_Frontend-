@@ -1,9 +1,24 @@
-# Nemesia_Website_Frontend
+# Nemesia (front-end prototype)
 
+Static, front-end-only prototype intended for GitHub Pages deployment.
 
+## Structure
 
-<b> Our visions </b>
-<div> Nemesia’s goal is to provide you with the most current, accurate and reliable information regarding </div>
-<div> non-invasive aesthetic procedures before you even cross the threshold of any clinic. </div> 
-<div> Clearing up common misconceptions, making you aware of side effect risk as well as the post-treatment care are an important part of this.</div> <div> We want to reduce the influence of advertising, biased or misinformed social media posts and influencers </div> 
-<div> when you navigate the possibilities of enhancing your appearance. </div>
+- `index.html` — **Homepage** (the only page with content)
+- `catalogue.html`, `visualise.html`, `forum.html`, `login.html`, `app-download.html` — accessible but intentionally empty
+- `assets/css/styles.css` — site styling (includes `@font-face` declarations)
+- `assets/js/main.js` — basic nav highlighting
+- `assets/images/` — image assets
+
+## Fonts
+
+This prototype is wired to load:
+- `./assets/Web-Fonts/magnoliamedium-webfont.woff` (MagnoliaMedium)
+- `./assets/Fonts/avenir-next-ultra-light.ttf` (AvenirNextUltraLight)
+
+If those files are not present, the site will fall back to system fonts.
+
+## GitHub Pages
+
+1. Push the folder contents to a GitHub repository.
+2. In the repo settings, enable GitHub Pages for the branch/folder that contains `index.html`.

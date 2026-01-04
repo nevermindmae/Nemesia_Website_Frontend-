@@ -1,27 +1,145 @@
 <!doctype html>
 <html lang="en">
 <head>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#F7F4EF">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/css/style.css" rel="stylesheet">
-
-<!-- Smooth scrolling -->
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-
-<!-- Animation -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
-<title>Nemesia</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nemesia</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/css/styles.css" rel="stylesheet">
 </head>
-<body data-page="home">
+<body>
+  <header class="site-header fixed-top">
+  <div class="container-fluid px-0">
+    <a class="d-block site-brand" href="index.html" aria-label="Nemesia home">Nemesia</a>
+    <hr class="brand-rule" />
+    <nav class="site-nav d-flex justify-content-between align-items-center flex-wrap" aria-label="Primary">
+      <a class="nav-link" href="index.html">Discover Nemesia</a>
+      <a class="nav-link" href="catalogue.html">Catalogue</a>
+      <a class="nav-link" href="visualise.html">Visualise</a>
+      <a class="nav-link" href="forum.html">Forum</a>
+      <a class="nav-link" href="login.html">Log in</a>
+      <a class="nav-link" href="app-download.html">App Download</a>
+    </nav>
+  </div>
+</header>
 
-<h1>Welcome to Nemesia</h1>
+  <main class="page-wrap">
+
+    <!-- Section: What is Nemesia? -->
+    <section class="section" id="what-is-nemesia">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h2>What is Nemesia?</h2>
+            <p><strong>Your space to discover, document and discuss your aesthetic medicine choices, outside of the disruptive and misinformative social media noise.</strong></p>
+            <p><strong>The name Nemesia is a deliberate nod to <em>Nemesis</em>, the Greek goddess associated with balance, rightful consequence and the restoration of equilibrium when things tip too far.</strong></p>
+            <p><strong>In aesthetic medicine, personal decisions can be negatively influenced by hype, bias and misinformation, leading to undesired outcomes and further driving feelings of dysmorphia.</strong></p>
+            <p><strong>Nemesia was founded to restore the equilibrium and help promote a realistic and scientifically-sound outlook on aesthetic medicine.</strong></p>
+            <p><strong>At Nemesia, we believe that just like the delicate blooms of nemesia, a beautiful flower by the same name, beauty thrives best under optimal and balanced conditions.</strong></p>
+          </div>
+          <div class="col-lg-6">
+            <div class="composition">
+              <img class="statue" src="./assets/images/female-bust-statue.png" alt="Classical bust statue">
+              <img class="flowers" src="./assets/images/flowers.png" alt="Purple flowers and petals">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Nemesia’s Vision (right aligned) -->
+    <section class="section" id="vision-1">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5 order-2 order-lg-1">
+            <div class="composition">
+              <img class="flowers left" src="./assets/images/flowers.png" alt="Purple flowers">
+            </div>
+          </div>
+          <div class="col-lg-7 order-1 order-lg-2 text-lg-end">
+            <h2>Nemesia’s Vision</h2>
+            <p>Nemesia’s goal is to provide you with the most current, accurate and reliable information regarding aesthetic procedures before you even cross the threshold of any clinic.</p>
+            <p>Discover our catalogues of aesthetic procedures, certified clinics and medical practitioners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Nemesia’s Vision (centred) -->
+    <section class="section" id="vision-2">
+      <div class="container position-relative">
+        <div class="text-center">
+          <h2>Nemesia’s Vision</h2>
+          <p>Clearing up common misconceptions, making you aware of side effect risk as well as post-treatment care are important to us. We want to reduce the influence of advertising, biased or misinformed social media posts and influencers when you navigate the possibilities of enhancing your appearance.</p>
+          <p>Explore each procedure in detail and scientific accuracy. Compare and contrast your favourites.</p>
+        </div>
+
+        <!-- Decorative flowers/petals -->
+        <div class="composition" aria-hidden="true">
+          <img class="flowers left" src="./assets/images/flowers.png" alt="">
+          <img class="petals-top" src="./assets/images/flowers.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Document & visualise -->
+    <section class="section" id="vision-3">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h2>Nemesia’s Vision</h2>
+            <p>By documenting your aesthetic journey with Nemesia, we hope to help you achieve an effective, yet healthy and balanced approach to your use of aesthetic medicine.</p>
+            <p>Document your past and future procedures, visualise possible treatments, predict long-term costs.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="models">
+              <img class="model-side" src="./assets/images/model_side.png" alt="3D model (side view)">
+              <img class="model-front" src="./assets/images/model_front.png" alt="3D model (front view)">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Dysphoria -->
+    <section class="section dysphoria" id="dysphoria">
+      <div class="container">
+        <img class="model-large" src="./assets/images/model_side.png" alt="3D model (large)">
+        <div class="overlay">
+          <h2>A realistic outlook to help reduce dysphoria</h2>
+          <p>We recognise that in many instances, surgical and non-surgical treatments alike may do more harm than good. We track medicine-related expenditures and predict the cost some repeat procedures might amount to, even years down the road.</p>
+          <a class="muted-link" href="visualise.html">Discover what psychology says</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Forum -->
+    <section class="section" id="forum-preview">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>Nemesia’s Vision</h2>
+            <p>Forum!</p>
+            <p>Productive discourse about aesthetic treatments and procedures with real, verified users.</p>
+            <p>Bot and AI-slop free</p>
+            <p>Blah blah blah</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: CTA -->
+    <section class="section cta" id="cta">
+      <div class="container">
+        <h2>Discover Nemesia Now</h2>
+        <div class="sub">*App Download Options*</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>
