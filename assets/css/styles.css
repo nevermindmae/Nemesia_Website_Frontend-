@@ -27,6 +27,10 @@ html, body {
   height: 100%;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
   background: var(--bg);
@@ -186,7 +190,7 @@ body {
   position: absolute;
   right: 38%;
   top: 0;
-  width: min(320px, 32vw);
+  width: min(640px, 64vw);
   filter: drop-shadow(0 18px 26px rgba(0,0,0,0.10));
 }
 
@@ -194,7 +198,7 @@ body {
   position: absolute;
   right: 6%;
   bottom: 0;
-  width: min(280px, 28vw);
+  width: min(560px, 56vw);
   filter: drop-shadow(0 18px 26px rgba(0,0,0,0.08));
 }
 
